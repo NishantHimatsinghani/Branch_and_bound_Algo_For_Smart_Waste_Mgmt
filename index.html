@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <style> body {padding: 0; margin: 0;} </style>
+		<script src="p5.min.js"></script>
+	    <script src="p5.dom.min.js"></script>
+	    <script src="p5.sound.min.js"></script>
+	    
+	    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+	
+	<script type="text/javascript" src="sketch_main.js"></script>
+    </head>
+  <body>
+	
+
+    	<h1> Please enter the no. of dustbins </h1>
+        <div id = "steps">
+
+            <p>Step 1 : Enter N no. of dustbins and click the button below</p>
+            <p>Step 2 : Place the dustbins on the map</p>
+            <p>Step 3 : Enter the edge cot values in the input boxes</p>
+            <p>Step 4 : Click on any of the SAVE buttons to run the Algorithm</p>
+            
+
+
+        </div>
+    	<form id = "nodes_main">
+      		Number of dustbins :<input type = "number" min = "3" max = "10" value = "4" name = "no_of_nodes" id = "no_of_nodes">
+      		<br>
+     	 	<input type="button" value="Click here to enter the cost of each path" onclick="no_nodes()" />
+      		<br>
+
+    	</form>
+
+
+
+
+    <h2> Please enter the cost of each edge in the range 1-100</h1>
+
+    <div class = "container"> 
+
+      <form id = "bin1" action = "" >
+        <div id = "label11">1 -> 2 : </div><input type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1">
+        <br>
+        <div id = "label21">1 -> 3 : </div><input type="number" min="1" max="100" id="e2" value = "50" name = "e2">
+        <br>
+        <div id = "label31">1 -> 4 : </div><input type="number" min="1" max="100" id="e3" name = "e3" value = "50">
+        <br>
+        <div id = "label41">1 -> 5 : </div><input type="number" min="1" max="100" id="e4" name = "e4" value = "50">
+        <br>
+        <div id = "label51">1 -> 6 : </div><input type="number" min="1" max="100" id="e5" name = "e5" value = "50">
+        <br>
+        <div id = "label61">1 -> 7 : </div><input  type="number" min="1" max="100" id="e6" name = "e6" value = "50">
+        <br>
+        <div id = "label71">1 -> 8 : </div><input type="number" min="1" max="100" id="e7" name = "e7" value = "50">
+        <br>
+        <div id = "label81">1 -> 9 : </div><input type="number" min="1" max="100" id="e8" name = "e8" value = "50">
+        <br>
+        <div id = "label91">1 -> 10 : </div><input type="number" min="1" max="100" id="e9" name = "e9" value = "50">
+        <br>
+        <input type="button" value="Save1" onclick="insert()" />
+        <br><br>
+
+      </form>
+      <form id = "bin2" >
+        <div id = "label12">2 -> 1 : </div><input type="number" min="1" max="100" id="e1" name ="e1" value = "50">
+        <br>
+        <div id = "label22">2 -> 3 : </div><input type="number" name="e2" min="1" max="100" id = "e2" value = "50">
+        <br>
+        <div id = "label32">2 -> 4 : </div><input type="number" name="e3" id = "e3" min="1" max="100" value = "50">
+        <br>
+        <div id = "label42">2 -> 5 : </div><input type="number" min="1" max="100" id="e4" name = "e4" value = "50">
+        <br>
+        <div id = "label52">2 -> 6 : </div><input type="number" min="1" max="100" id="e5" name = "e5" value = "50">
+        <br>
+        <div id = "label62">2 -> 7 : </div><input type="number" min="1" max="100" id="e6" name = "e6" value = "50">
+        <br>
+        <div id = "label72">2 -> 8 : </div><input type="number" min="1" max="100" id="e7" name = "e7" value = "50">
+        <br>
+        <div id = "label82">2 -> 9 : </div><input type="number" min="1" max="100" id="e8" name = "e8" value = "50">
+        <br>
+        <div id = "label92">2 -> 10 : </div><input type="number" min="1" max="100" id="e9" name = "e9" value = "50">
+        <br>
+        <input type="button" value="Save2" onclick="insert()" />
+        <br><br>
+
+      </form>
+      <form id = "bin3" >
+        
+        <div id = "label13">3 -> 1 : </div><input type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1">
+        <br>
+        <div id = "label23">3 -> 2 : </div><input type="number" min="1" max="100" id="e2" value = "50" name = "e2">
+        <br>
+        <div id = "label33">3 -> 4 : </div><input type="number" min="1" max="100" id="e3" name = "e3" value = "50">
+        <br>
+        <div id = "label43">3 -> 5 : </div><input type="number" min="1" max="100" id="e4" name = "e4" value = "50">
+        <br>
+        <div id = "label53">3 -> 6 : </div><input type="number" min="1" max="100" id="e5" name = "e5" value = "50">
+        <br>
+        <div id = "label63">3 -> 7 : </div><input  type="number" min="1" max="100" id="e6" name = "e6" value = "50">
+        <br>
+        <div id = "label73">3 -> 8 : </div><input type="number" min="1" max="100" id="e7" name = "e7" value = "50">
+        <br>
+        <div id = "label83">3 -> 9 : </div><input type="number" min="1" max="100" id="e8" name = "e8" value = "50">
+        <br>
+        <div id = "label93">3 -> 10 : </div><input type="number" min="1" max="100" id="e9" name = "e9" value = "50">
+        <br>
+        <input type="button" value="Save3" onclick="insert()" />
+        <br><br>
+
+      </form>
+      
+      <form id = "bin4" >
+        
+        <div id = "label14">4 -> 1 : </div><input type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1">
+        <br>
+        <div id = "label24">4 -> 2 : </div><input type="number" min="1" max="100" id="e2" value = "50" name = "e2">
+        <br>
+        <div id = "label34">4 -> 3 : </div><input type="number" min="1" max="100" id="e3" name = "e3" value = "50">
+        <br>
+        <div id = "label44">4 -> 5 : </div><input type="number" min="1" max="100" id="e4" name = "e4" value = "50">
+        <br>
+        <div id = "label54">4 -> 6 : </div><input type="number" min="1" max="100" id="e5" name = "e5" value = "50">
+        <br>
+        <div id = "label64">4 -> 7 : </div><input  type="number" min="1" max="100" id="e6" name = "e6" value = "50">
+        <br>
+        <div id = "label74">4 -> 8 : </div><input type="number" min="1" max="100" id="e7" name = "e7" value = "50">
+        <br>
+        <div id = "label84">4 -> 9 : </div><input type="number" min="1" max="100" id="e8" name = "e8" value = "50">
+        <br>
+        <div id = "label94">4 -> 10 : </div><input type="number" min="1" max="100" id="e9" name = "e9" value = "50">
+        <br>
+        <input type="button" value="Save4" onclick="insert()" />
+        <br><br>
+
+      </form>
+
+      <form id = "bin5" >
+        
+        <div id = "label15">5 -> 1 : </div><input type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1">
+        <br>
+        <div id = "label25">5 -> 2 : </div><input type="number" min="1" max="100" id="e2" value = "50" name = "e2">
+        <br>
+        <div id = "label35">5 -> 3 : </div><input type="number" min="1" max="100" id="e3" name = "e3" value = "50">
+        <br>
+        <div id = "label45">5 -> 4 : </div><input type="number" min="1" max="100" id="e4" name = "e4" value = "50">
+        <br>
+        <div id = "label55">5 -> 6 : </div><input type="number" min="1" max="100" id="e5" name = "e5" value = "50">
+        <br>
+        <div id = "label65">5 -> 7 : </div><input  type="number" min="1" max="100" id="e6" name = "e6" value = "50">
+        <br>
+        <div id = "label75">5 -> 8 : </div><input type="number" min="1" max="100" id="e7" name = "e7" value = "50">
+        <br>
+        <div id = "label85">5 -> 9 : </div><input type="number" min="1" max="100" id="e8" name = "e8" value = "50">
+        <br>
+        <div id = "label95">5 -> 10 : </div><input type="number" min="1" max="100" id="e9" name = "e9" value = "50">
+        <br>
+        <input type="button" value="Save4" onclick="insert()" />
+        <br><br>
+
+      </form>
+
+      <form id = "bin6" >
+        
+        
+        <div id = "label16">6 -> 1 : </div><input type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1">
+        <br>
+        <div id = "label26">6 -> 2 : </div><input type="number" min="1" max="100" id="e2" value = "50" name = "e2">
+        <br>
+        <div id = "label36">6 -> 3 : </div><input type="number" min="1" max="100" id="e3" name = "e3" value = "50">
+        <br>
+        <div id = "label46">6 -> 4 : </div><input type="number" min="1" max="100" id="e4" name = "e4" value = "50">
+        <br>
+        <div id = "label56">6 -> 5 : </div><input type="number" min="1" max="100" id="e5" name = "e5" value = "50">
+        <br>
+        <div id = "label66">6 -> 7 : </div><input  type="number" min="1" max="100" id="e6" name = "e6" value = "50">
+        <br>
+        <div id = "label76">6 -> 8 : </div><input type="number" min="1" max="100" id="e7" name = "e7" value = "50">
+        <br>
+        <div id = "label86">6 -> 9 : </div><input type="number" min="1" max="100" id="e8" name = "e8" value = "50">
+        <br>
+        <div id = "label96">6 -> 10 : </div><input type="number" min="1" max="100" id="e9" name = "e9" value = "50">
+        <br>
+        <input type="button" value="Save4" onclick="insert()" />
+        <br><br>
+
+      </form>
+      
+      <form id = "bin7" >
+        
+        <div id = "label17">7 -> 1 : </div><input type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1">
+        <br>
+        <div id = "label27">7 -> 2 : </div><input type="number" min="1" max="100" id="e2" value = "50" name = "e2">
+        <br>
+        <div id = "label37">7 -> 3 : </div><input type="number" min="1" max="100" id="e3" name = "e3" value = "50">
+        <br>
+        <div id = "label47">7 -> 4 : </div><input type="number" min="1" max="100" id="e4" name = "e4" value = "50">
+        <br>
+        <div id = "label57">7 -> 5 : </div><input type="number" min="1" max="100" id="e5" name = "e5" value = "50">
+        <br>
+        <div id = "label67">7 -> 6 : </div><input  type="number" min="1" max="100" id="e6" name = "e6" value = "50">
+        <br>
+        <div id = "label77">7 -> 8 : </div><input type="number" min="1" max="100" id="e7" name = "e7" value = "50">
+        <br>
+        <div id = "label87">7 -> 9 : </div><input type="number" min="1" max="100" id="e8" name = "e8" value = "50">
+        <br>
+        <div id = "label97">7 -> 10 : </div><input type="number" min="1" max="100" id="e9" name = "e9" value = "50">
+        <br>
+        <input type="button" value="Save4" onclick="insert()" />
+        <br><br>
+
+      </form>
+
+      <form id = "bin8" >
+        
+        <div id = "label18">8 -> 1 : </div><input type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1">
+        <br>
+        <div id = "label28">8 -> 2 : </div><input type="number" min="1" max="100" id="e2" value = "50" name = "e2">
+        <br>
+        <div id = "label38">8 -> 3 : </div><input type="number" min="1" max="100" id="e3" name = "e3" value = "50">
+        <br>
+        <div id = "label48">8 -> 4 : </div><input type="number" min="1" max="100" id="e4" name = "e4" value = "50">
+        <br>
+        <div id = "label58">8 -> 5 : </div><input type="number" min="1" max="100" id="e5" name = "e5" value = "50">
+        <br>
+        <div id = "label68">8 -> 6 : </div><input  type="number" min="1" max="100" id="e6" name = "e6" value = "50">
+        <br>
+        <div id = "label78">8 -> 7 : </div><input type="number" min="1" max="100" id="e7" name = "e7" value = "50">
+        <br>
+        <div id = "label88">8 -> 9 : </div><input type="number" min="1" max="100" id="e8" name = "e8" value = "50">
+        <br>
+        <div id = "label98">8 -> 10 : </div><input type="number" min="1" max="100" id="e9" name = "e9" value = "50">
+        <br>
+        <input type="button" value="Save4" onclick="insert()" />
+        <br><br>
+
+      </form>
+
+      <form id = "bin9" >
+        
+        <div id = "label19">9 -> 1 : </div><input type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1">
+        <br>
+        <div id = "label29">9 -> 2 : </div><input type="number" min="1" max="100" id="e2" value = "50" name = "e2">
+        <br>
+        <div id = "label39">9 -> 3 : </div><input type="number" min="1" max="100" id="e3" name = "e3" value = "50">
+        <br>
+        <div id = "label49">9 -> 4 : </div><input type="number" min="1" max="100" id="e4" name = "e4" value = "50">
+        <br>
+        <div id = "label59">9 -> 5 : </div><input type="number" min="1" max="100" id="e5" name = "e5" value = "50">
+        <br>
+        <div id = "label69">9 -> 6 : </div><input  type="number" min="1" max="100" id="e6" name = "e6" value = "50">
+        <br>
+        <div id = "label79">9 -> 7 : </div><input type="number" min="1" max="100" id="e7" name = "e7" value = "50">
+        <br>
+        <div id = "label89">9 -> 8 : </div><input type="number" min="1" max="100" id="e8" name = "e8" value = "50">
+        <br>
+        <div id = "label99">9 -> 10 : </div><input type="number" min="1" max="100" id="e9" name = "e9" value = "50">
+        <br>
+        <input type="button" value="Save4" onclick="insert()" />
+        <br><br>
+
+      </form>
+
+      <form id = "bin10" >
+        
+        <div id = "label110">10 -> 1 : </div><input type="number" min="1" max="100" value = "50" name="one_to_two" id = "e1">
+        <br>
+        <div id = "label210">10 -> 2 : </div><input type="number" min="1" max="100" id="e2" value = "50" name = "e2">
+        <br>
+        <div id = "label310">10 -> 3 : </div><input type="number" min="1" max="100" id="e3" name = "e3" value = "50">
+        <br>
+        <div id = "label410">10 -> 4 : </div><input type="number" min="1" max="100" id="e4" name = "e4" value = "50">
+        <br>
+        <div id = "label510">10 -> 5 : </div><input type="number" min="1" max="100" id="e5" name = "e5" value = "50">
+        <br>
+        <div id = "label610">10 -> 6 : </div><input  type="number" min="1" max="100" id="e6" name = "e6" value = "50">
+        <br>
+        <div id = "label710">10 -> 7 : </div><input type="number" min="1" max="100" id="e7" name = "e7" value = "50">
+        <br>
+        <div id = "label810">10 -> 8 : </div><input type="number" min="1" max="100" id="e8" name = "e8" value = "50">
+        <br>
+        <div id = "label910">10 -> 9 : </div><input type="number" min="1" max="100" id="e9" name = "e9" value = "50">
+        <br>
+        <input type="button" value="Save4" onclick="insert()" />
+        <br><br>
+
+      </form>
+
+
+    </div>
+    <img id="scream" style = "display : none"  src="vjti.jpg" alt="The Scream">
+    
+    <div id = "directions"> </div>
+    <div id = "cost_info"></div>
+    <h2>Assuming that we start our journey from Bin No.1</h2>
+    <canvas id="myCanvas" width="1500" height="500" style="border:1px solid #c3c3c3;"></canvas>
+    
+
+    <!--<input type="button" name="Run the main algorithm to find shortest path" onclick="algo()"> -->
+    <div  >
+        <table id = "color_info" style="width:100%">
+          <!--<tr>
+            <th>Color</th>
+            <th>bin id</th>
+          </tr>
+
+          <tr id = "row1">
+            <td></td>
+            <td></td>
+          </tr>
+          <tr id = "row2"></tr>
+          <tr id = "row3"></tr>
+          <tr id = "row4"></tr>
+          <tr id = "row5"></tr>
+          <tr id = "row6"></tr>
+          <tr id = "row7"></tr>
+          <tr id = "row8"></tr>
+          <tr id = "row9"></tr>
+          <tr id = "row10"></tr>
+        -->
+
+
+
+        </table>
+	<div id = "info_verify">Path to be taken as per BIN ID : <br></div>
+
+
+
+
+
+    </div>
+	<script>
+	    window.onload = function() {
+	    var canvas = document.getElementById("myCanvas");
+	    var ctx = canvas.getContext("2d");
+	    var img = document.getElementById("scream");
+	    ctx.drawImage(img, 0, 0);
+	};
+
+	</script>
+    
+  </body>
+</html>
